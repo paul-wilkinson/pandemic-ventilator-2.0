@@ -170,7 +170,7 @@ void loop() {
   digitalWrite(ev1, HIGH); //Open Valve 1
   digitalWrite(ev2, LOW); //Close Valve 2 
   analogWrite(epr1, volume);  
-  int time_ratio = (((60/breath)/(1+ratio))*60)/2.85;
+  int time_ratio = (((60.0/(double)breath)/(1.0+(double)ratio))*60.0)/2.85;
   for (int bal = 0; bal < time_ratio; bal = bal + 1) {
     Serial.print("-O:");//ERP1 Reading
     Serial.print(analogRead(sensor_epr1));
